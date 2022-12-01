@@ -1,0 +1,14 @@
+#field {
+  width: 50vw;
+  height: 50vw;
+  border-collapse: collapse;
+}
+
+.slot {
+  transition: all .1s ease-out;
+  border: 1px solid;
+}
+
+.alive {
+  background-color: black;
+}
