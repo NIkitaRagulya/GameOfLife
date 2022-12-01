@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let interval;
 
+  let clicked;
+
   const neighborsForLive = (cell) => {
     let count = 0;
     let cellId = Number(cell.id.replace('td',''));
@@ -69,6 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
       cell.classList.add('slot')
       cell.addEventListener('click', (e) => {
         e.target.classList.add('alive')
+      })
+      cell.addEventListener('mouseup', (e) => {
+        clicked = false
+      });
+      cell.addEventListener('mousedown', (e) => {
+        e.target.classList.add('alive')
+        clicked = true
+      });
+      cell.addEventListener('mouseover', (e) => {
+        if (clicked) e.target.classList.add('alive')
       })
       cell.setAttribute('id', `td${j}`)
     }
